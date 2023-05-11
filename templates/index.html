@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Breast Cancer Prediction Model</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="static/style.css" />
+  </head>
+
+  <body style="background: violet">
+    <div class="login">
+      <h1 style="color: Black">Breast Cancer Prediction</h1>
+      <p>
+        A machine learning model is developed based on 9 features that classify
+        whether the breast cancer is benign or <br />malignant. For classifying
+        the patient, users are request to submit their data on the following
+        <br />
+        form as per the value range provided in the input placeholder. Check the
+        bottom of the form for results
+      </p>
+
+      <form action="{{url_for('predict')}}" method="post">
+        <input
+          class="form-control-lg"
+          type="text"
+          name="clump_thickness"
+          placeholder="clump_thickness"
+          required="required"
+        /><br />
+        <input
+          class="form-control-lg"
+          type="text"
+          name="size_uniformity"
+          placeholder="size_uniformity"
+          required="required"
+        /><br />
+        <input
+          class="form-control-lg"
+          type="text"
+          name="shape_uniformity"
+          placeholder="shape_uniformity"
+          required="required"
+        /><br />
+        <input
+          class="form-control-lg"
+          type="text"
+          name="marginal_adhesion"
+          placeholder="marginal_adhesion"
+          required="required"
+        /><br />
+        <input
+          class="form-control-lg"
+          type="text"
+          name="epithelial_size"
+          placeholder="epithelial_size"
+          required="required"
+        /><br />
+        <input
+          class="form-control-lg"
+          type="text"
+          name="bare_nucleoli"
+          placeholder="bare_nucleoli"
+          required="required"
+        /><br />
+        <input
+          class="form-control-lg"
+          type="text"
+          name="bland_chromatin"
+          placeholder="bland_chromatin"
+          required="required"
+        /><br />
+        <input
+          class="form-control-lg"
+          type="text"
+          name="normal_nucleoli"
+          placeholder="normal_nucleoli"
+          required="required"
+        /><br />
+        <input
+          class="form-control-lg"
+          type="text"
+          name="mitoses"
+          placeholder="mitoses"
+          required="required"
+        /><br />
+        <br />
+        <p>
+          <button type="submit" class="btn btn-primary btn-block btn-large">
+            PREDICT
+          </button>
+        </p>
+        <br />
+        <br />
+        <h4 style="color: Black">{{ prediction_text}}</h4>
+      </form>
+    </div>
+  </body>
+</html>
