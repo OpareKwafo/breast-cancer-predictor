@@ -7,7 +7,7 @@
 - Usage
 - Contributing
 - Credits
-  \*License
+- License
 
 ## Project Description
 
